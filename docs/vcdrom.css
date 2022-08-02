@@ -1,4 +1,16 @@
 
+.CodeMirror {
+  border-style: solid;
+  border-width: 1px 4px 1px 4px;
+  border-color: hsla(242, 100%, 50%, 0.01);
+}
+
+.CodeMirror-focused {
+  border-style: solid;
+  border-width: 1px 4px 1px 4px;
+  border-color: hsla(242, 100%, 50%, 0.7);
+}
+
 .CodeMirror-hints {
   position: absolute;
   z-index: 10;
