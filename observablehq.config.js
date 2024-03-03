@@ -13,7 +13,8 @@ export default {
     ]},
     {name: "Contributing", path: "/contributing"},
   ],
-  root: 'src', // path to the source root for preview
+  // header: `<div>VCDrom ?</div>`,
+  root: 'src', // path to the source root
   output: 'docs/documentation', // path to the output root for build
   search: true
 };

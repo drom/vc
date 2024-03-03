@@ -10,28 +10,38 @@
 <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
 <link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
 <link rel="modulepreload" href="./_import/components/format.js?sha=f4335d54b5b7de2ea0cbb935d5e16e1d1185e6a40b28339bc0c3951bdad7fe38">
-<link rel="modulepreload" href="./_import/components/formatExamples.js?sha=97017861a68a67c6be65f016e812b2a69252ac39fb22dbc8916501160e8bd271">
+<link rel="modulepreload" href="./_import/components/formatExamples.js?sha=e10ebbbf1dc8229f780b0197e4e696e94bcf79f9cd0f6083644a20128ed422d8">
 <link rel="modulepreload" href="./_observablehq/client.js">
 <link rel="modulepreload" href="./_observablehq/runtime.js">
 <link rel="modulepreload" href="./_observablehq/stdlib.js">
 <link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/htl@0.3.1/+esm">
 <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/isoformat@0.2.1/+esm">
-<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/onml@2.1.0/+esm">
-<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/sax@1.3.0/+esm">
 <script type="module">
 
 import {define} from "./_observablehq/client.js";
 
 define({id: "7149d75c", outputs: ["formatExamples"], body: async () => {
-const {formatExamples} = await import("./_import/components/formatExamples.js?sha=97017861a68a67c6be65f016e812b2a69252ac39fb22dbc8916501160e8bd271");
+const {formatExamples} = await import("./_import/components/formatExamples.js?sha=e10ebbbf1dc8229f780b0197e4e696e94bcf79f9cd0f6083644a20128ed422d8");
 
 return {formatExamples};
 }});
 
-define({id: "17dc5492", inputs: ["Inputs","formatExamples","display"], body: async (Inputs,formatExamples,display) => {
+define({id: "68039c2e", inputs: ["Inputs","Generators"], outputs: ["posNumInput","posNumber"], body: (Inputs,Generators) => {
+const posNumInput = Inputs.range([1, 80], {value: 48, label: "Number of positions", step: 1});
+const posNumber = Generators.input(posNumInput);
+return {posNumInput,posNumber};
+}});
+
+define({id: "03ad33d7", inline: true, inputs: ["posNumInput","display"], body: async (posNumInput,display) => {
 display(await(
-Inputs.table(...formatExamples())
+posNumInput
+))
+}});
+
+define({id: "230cb4ce", inline: true, inputs: ["Inputs","formatExamples","posNumber","display"], body: async (Inputs,formatExamples,posNumber,display) => {
+display(await(
+Inputs.table(...formatExamples(posNumber))
 ))
 }});
 
@@ -126,7 +136,11 @@ the label will represented as vector of labels.</p>
 <h3 id="examples" tabindex="-1"><a class="observablehq-header-anchor" href="#examples">Examples</a></h3>
 <p>The label may be shortened to fit the space available in waveform.
 Some examples of labels shown in the table below.</p>
-<div id="cell-17dc5492" class="observablehq observablehq--block observablehq--loading"></div>
+<div id="cell-68039c2e" class="observablehq observablehq--block"></div>
+<div class="card" style="padding: 10px 0px;">
+<span id="cell-03ad33d7" class="observablehq--loading"></span>
+<span id="cell-230cb4ce" class="observablehq--loading"></span>
+</div>
 <h3 id="links" tabindex="-1"><a class="observablehq-header-anchor" href="#links">Links</a></h3>
 <ul>
 <li>https://www.netlib.org/fp/</li>
@@ -140,6 +154,6 @@ Some examples of labels shown in the table below.</p>
 </main>
 <footer id="observablehq-footer">
 <nav><a rel="prev" href="./getting-started"><span>Getting started</span></a><a rel="next" href="./online"><span>Online</span></a></nav>
-<div>Built with <a href="https://observablehq.com/" target="_blank">Observable</a> on <a title="2024-03-02T19:30:50">Mar 2, 2024</a>.</div>
+<div>Built with <a href="https://observablehq.com/" target="_blank">Observable</a> on <a title="2024-03-02T22:59:48">Mar 2, 2024</a>.</div>
 </footer>
 </div>
