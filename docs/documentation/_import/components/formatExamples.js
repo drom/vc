@@ -106,16 +106,18 @@ export function formatExamples (customNumPositions) {
   const poss = [1, 2, 3, 4, 5, 6, 7, 8, Number(customNumPositions)];
   const table = specs.map(spec => {
     const {fmt, len, val} = spec;
-    const row = {fmt, len, val};
+    const row = {fmt, len, val: ' '};
+    const curFmt = format(fmt, len);
     poss.map(pos => {
-      row[pos + ' '] = format(fmt, len)(val, pos);
+      row[pos + ' '] = curFmt(val, pos);
     });
     return row;
   });
   return [
     table,
     {
-      height: 560
+      rows: table.length,
+      height: 1250
     }
   ];
 
