@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>WaveQL | VCDrom</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.css">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.css">
+<link rel="modulepreload" href="./_import/components/format.js?sha=f4335d54b5b7de2ea0cbb935d5e16e1d1185e6a40b28339bc0c3951bdad7fe38">
+<link rel="modulepreload" href="./_import/components/formatExamples.js?sha=97017861a68a67c6be65f016e812b2a69252ac39fb22dbc8916501160e8bd271">
+<link rel="modulepreload" href="./_observablehq/client.js">
+<link rel="modulepreload" href="./_observablehq/runtime.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.js">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/htl@0.3.1/+esm">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/isoformat@0.2.1/+esm">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/onml@2.1.0/+esm">
+<link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/sax@1.3.0/+esm">
+<script type="module">
+
+import {define} from "./_observablehq/client.js";
+
+define({id: "7149d75c", outputs: ["formatExamples"], body: async () => {
+const {formatExamples} = await import("./_import/components/formatExamples.js?sha=97017861a68a67c6be65f016e812b2a69252ac39fb22dbc8916501160e8bd271");
+
+return {formatExamples};
+}});
+
+define({id: "17dc5492", inputs: ["Inputs","formatExamples","display"], body: async (Inputs,formatExamples,display) => {
+display(await(
+Inputs.table(...formatExamples())
+))
+}});
+
+</script>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">VCDrom</a></li>
+  </ol>
+  <div id="observablehq-search" data-root="./"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),s=o.getAttribute("data-root"),a=()=>import(`${s}_observablehq/search.js`);t.addEventListener("focus",a,{once:!0}),t.addEventListener("keydown",a,{once:!0});const r=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(r.classList.add("observablehq-sidebar-open"),t.focus(),t.select(),e.preventDefault())}),t.addEventListener("blur",()=>r.classList.remove("observablehq-sidebar-open"));}</script>
+  <ol>
+    <details open>
+      <summary>Introduction</summary>
+      <ol>
+    <li class="observablehq-link"><a href="./getting-started">Getting started</a></li>
+      </ol>
+    </details>
+  </ol>
+  <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./waveql">WaveQL</a></li></ol>
+    <details open>
+      <summary>How to use?</summary>
+      <ol>
+    <li class="observablehq-link"><a href="./online">Online</a></li>
+    <li class="observablehq-link"><a href="./vscode">VScode plugin</a></li>
+    <li class="observablehq-link"><a href="./keys">Keys + Mouse</a></li>
+      </ol>
+    </details>
+  </ol>
+  <ol>
+    <li class="observablehq-link"><a href="./contributing">Contributing</a></li>
+  </ol>
+</nav>
+<script>{Object.assign(document.createElement("a"),{href:""}).password&&location.replace(location.href);const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<aside id="observablehq-toc" data-selector="#observablehq-main h1:not(:first-of-type), #observablehq-main h2:not(h1 + h2):has(a.observablehq-header-anchor)">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#format-%25">Format %</a></li>
+<li class="observablehq-secondary-link"><a href="#cursors-%40">Cursors @</a></li>
+<li class="observablehq-secondary-link"><a href="#labels-%3A">Labels :</a></li>
+<li class="observablehq-secondary-link"><a href="#patterns-%7B%7D">Patterns {}</a></li>
+<li class="observablehq-secondary-link"><a href="#functions-()">Functions ()</a></li>
+</ol>
+</nav>
+</aside>
+<div id="observablehq-center">
+<main id="observablehq-main" class="observablehq">
+<div id="cell-7149d75c" class="observablehq observablehq--block"></div>
+<h1 id="waveql" tabindex="-1"><a class="observablehq-header-anchor" href="#waveql">WaveQL</a></h1>
+<p>waveform query language</p>
+<h2 id="format-%25" tabindex="-1"><a class="observablehq-header-anchor" href="#format-%25">Format <code>%</code></a></h2>
+<p>Text label of multibit values can be formated using one of <em>format specifiers</em>.</p>
+<p>A <em>format specifier</em> has following structure:</p>
+<pre><code>%specifier[element width]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>specifier</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b, o, d, h</td>
+<td>Unsigned ( binary, octal, decimal,hexadecimal ) integer</td>
+</tr>
+<tr>
+<td>sb, so, sd, sh</td>
+<td>Signed ( binary, octal, decimal, hexadecimal ) integer</td>
+</tr>
+<tr>
+<td>f, e, g, a</td>
+<td>Floating point number in ( Fixed point, Exponent, General, Hexadecimal ) notation</td>
+</tr>
+<tr>
+<td>c</td>
+<td>Character format</td>
+</tr>
+</tbody>
+</table>
+<h3 id="element-width" tabindex="-1"><a class="observablehq-header-anchor" href="#element-width">element width</a></h3>
+<p>Optional element with.
+If not specified then total wire width is used.
+If total wire width is longer then element width,
+the label will represented as vector of labels.</p>
+<h3 id="examples" tabindex="-1"><a class="observablehq-header-anchor" href="#examples">Examples</a></h3>
+<p>The label may be shortened to fit the space available in waveform.
+Some examples of labels shown in the table below.</p>
+<div id="cell-17dc5492" class="observablehq observablehq--block observablehq--loading"></div>
+<h3 id="links" tabindex="-1"><a class="observablehq-header-anchor" href="#links">Links</a></h3>
+<ul>
+<li>https://www.netlib.org/fp/</li>
+<li>https://stackoverflow.com/questions/21882862/purpose-of-hexadecimal-floating-point-value</li>
+</ul>
+<h2 id="cursors-%40" tabindex="-1"><a class="observablehq-header-anchor" href="#cursors-%40">Cursors <code>@</code></a></h2>
+<p>cursors</p>
+<h2 id="labels-%3A" tabindex="-1"><a class="observablehq-header-anchor" href="#labels-%3A">Labels <code>:</code></a></h2>
+<h2 id="patterns-%7B%7D" tabindex="-1"><a class="observablehq-header-anchor" href="#patterns-%7B%7D">Patterns <code>{}</code></a></h2>
+<h2 id="functions-()" tabindex="-1"><a class="observablehq-header-anchor" href="#functions-()">Functions <code>()</code></a></h2>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./getting-started"><span>Getting started</span></a><a rel="next" href="./online"><span>Online</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank">Observable</a> on <a title="2024-03-02T19:30:50">Mar 2, 2024</a>.</div>
+</footer>
+</div>
