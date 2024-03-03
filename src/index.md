@@ -65,7 +65,8 @@ toc: false
     <h1>VCDrom</h1>
     <h2>Waveform viewer for the Web</h2>
     <h3>Explore and share your waves 🌊</h3>
-    <span class="action">Get started</span>
+    <br>
+    <a href="./getting-started" class="red">Get started →</a>
   </div>
   <div class="logo">
     <img src="./data/logo.svg"/>

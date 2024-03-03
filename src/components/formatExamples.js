@@ -1,4 +1,3 @@
-const onml = await import('npm:onml');
 import format from './format.js';
 
 const fp64_2bigint = (val) => {
@@ -83,7 +82,7 @@ const specs = [
 ];
 
 const getFmtTable = () => {
-  const poss = [1, 2, 3, 4, 5, 6, 7, 8, 16, 48];
+  const poss = [1, 2, 3, 4, 5, 6, 7, 8, 48];
   const header = [
     '', 'pos\u2192', ...poss,
     '\u2B10fmt', '\u2B10len', ...poss.map(e => '*'.repeat(e))
@@ -97,30 +96,26 @@ const getFmtTable = () => {
   return res;
 };
 
-export function formatExamples () {
+export function formatExamples (customNumPositions) {
   // return Inputs.table()
   // const el = document.createElement('div');
   // el.innerHTML = onml.stringify(getFmtTable());
 
   // return el;
 
-  const poss = [1, 2, 3, 4, 5, 6, 7, 8, 16, 48];
-  specs.map(spec => {
+  const poss = [1, 2, 3, 4, 5, 6, 7, 8, Number(customNumPositions)];
+  const table = specs.map(spec => {
+    const {fmt, len, val} = spec;
+    const row = {fmt, len, val};
     poss.map(pos => {
-      spec[pos + ' '] = format(spec.fmt, spec.len)(spec.val, pos);
+      row[pos + ' '] = format(fmt, len)(val, pos);
     });
-    delete spec.val;
+    return row;
   });
   return [
-    specs,
+    table,
     {
-    //   colunms: [
-    //     'fmt',
-    //   ],
-    //   header: {
-    //     fmt: ''
-    //   }
-      height: 600
+      height: 560
     }
   ];
 

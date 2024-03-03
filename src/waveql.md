@@ -6,6 +6,7 @@ title: WaveQL
 import {formatExamples} from './components/formatExamples.js';
 ```
 
+
 # WaveQL
 
 waveform query language
@@ -40,8 +41,15 @@ The label may be shortened to fit the space available in waveform.
 Some examples of labels shown in the table below.
 
 ```js
-Inputs.table(...formatExamples())
+const posNumInput = Inputs.range([1, 80], {value: 48, label: "Number of positions", step: 1});
+const posNumber = Generators.input(posNumInput);
 ```
+
+<div class="card" style="padding: 10px 0px;">
+${posNumInput}
+${Inputs.table(...formatExamples(posNumber))}
+</div>
+
 
 ### Links
 
