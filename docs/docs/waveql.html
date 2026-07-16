@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="generator" content="Observable Framework v1.13.3">
+<title>WaveQL | VCDrom</title>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="preload" as="style" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="preload" as="style" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,200..900;1,8..60,200..900&amp;display=swap" crossorigin>
+<link rel="stylesheet" type="text/css" href="./_observablehq/theme-air,near-midnight.dcdbf18e.css">
+<link rel="stylesheet" type="text/css" href="./_observablehq/stdlib/inputs.ea9fd553.css">
+<link rel="modulepreload" href="./_observablehq/client.14e7fa4a.js">
+<link rel="modulepreload" href="./_observablehq/runtime.e080113b.js">
+<link rel="modulepreload" href="./_observablehq/stdlib.eabb1795.js">
+<link rel="modulepreload" href="./_import/components/formatExamples.a061c661.js">
+<link rel="modulepreload" href="./_observablehq/stdlib/inputs.5ca2ce9b.js">
+<link rel="modulepreload" href="./_import/components/format.5b551975.js">
+<link rel="modulepreload" href="./_npm/htl@0.3.1/72f4716c.js">
+<link rel="modulepreload" href="./_npm/isoformat@0.2.1/18cbf477.js">
+<script type="module">
+
+import {define} from "./_observablehq/client.14e7fa4a.js";
+
+define({id: "7149d75c", outputs: ["formatExamples"], body: async () => {
+const {formatExamples} = await import("./_import/components/formatExamples.a061c661.js");
+
+return {formatExamples};
+}});
+
+define({id: "68039c2e", inputs: ["Inputs","Generators"], outputs: ["posNumInput","posNumber"], body: (Inputs,Generators) => {
+const posNumInput = Inputs.range([1, 80], {value: 48, label: "Number of positions", step: 1});
+const posNumber = Generators.input(posNumInput);
+return {posNumInput,posNumber};
+}});
+
+define({id: "03ad33d7", mode: "inline", inputs: ["posNumInput","display"], body: async (posNumInput,display) => {
+display(await(
+posNumInput
+))
+}});
+
+define({id: "230cb4ce", mode: "inline", inputs: ["Inputs","formatExamples","posNumber","display"], body: async (Inputs,formatExamples,posNumber,display) => {
+display(await(
+Inputs.table(...formatExamples(posNumber))
+))
+}});
+
+</script>
+</head>
+<body>
+<input id="observablehq-sidebar-toggle" type="checkbox" title="Toggle sidebar">
+<label id="observablehq-sidebar-backdrop" for="observablehq-sidebar-toggle"></label>
+<nav id="observablehq-sidebar">
+  <ol>
+    <label id="observablehq-sidebar-close" for="observablehq-sidebar-toggle"></label>
+    <li class="observablehq-link"><a href="./">VCDrom</a></li>
+  </ol>
+  <div id="observablehq-search"><input type="search" placeholder="Search"></div>
+  <div id="observablehq-search-results"></div>
+  <script>{const o=document.querySelector("#observablehq-search");o.setAttribute("data-shortcut",`${/Mac|iPhone/.test(navigator.platform)?"\u2318":"Alt-"}K`);const t=o.querySelector("input"),r=()=>import("./_observablehq/search.754d8941.js");t.addEventListener("focus",r,{once:!0}),t.addEventListener("keydown",r,{once:!0});const c=document.querySelector("#observablehq-sidebar-toggle");addEventListener("keydown",e=>{(e.code==="KeyK"&&e.metaKey&&!e.altKey&&!e.ctrlKey||e.key==="/"&&!e.metaKey&&!e.altKey&&!e.ctrlKey&&e.target===document.body)&&(c.checked?t.focus():(c.click(),t.focus(),c.click()),t.select(),e.preventDefault())});}</script>
+  <section>
+    <summary>Introduction</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./getting-started">Getting started</a></li>
+    </ol>
+  </section>
+  <ol>
+    <li class="observablehq-link observablehq-link-active"><a href="./waveql">WaveQL</a></li>
+  </ol>
+  <section>
+    <summary>How to use?</summary>
+    <ol>
+    <li class="observablehq-link"><a href="./online">Online</a></li>
+    <li class="observablehq-link"><a href="./vscode">VScode plugin</a></li>
+    <li class="observablehq-link"><a href="./keys">Keys + Mouse</a></li>
+    </ol>
+  </section>
+  <ol>
+    <li class="observablehq-link"><a href="./contributing">Contributing</a></li>
+  </ol>
+</nav>
+<script>{const e=document.querySelector("#observablehq-sidebar"),o=document.querySelector("#observablehq-sidebar-toggle"),r=sessionStorage.getItem("observablehq-sidebar");r?o.checked=r==="true":o.indeterminate=!0;for(const t of document.querySelectorAll("#observablehq-sidebar summary")){const s=t.parentElement;switch(sessionStorage.getItem(`observablehq-sidebar:${t.textContent}`)){case"true":s.open=!0;break;case"false":s.classList.contains("observablehq-section-active")||(s.open=!1);break}}addEventListener("beforeunload",()=>sessionStorage.setItem("observablehq-sidebar-scrolly",`${e.scrollTop}`));const a=sessionStorage.getItem("observablehq-sidebar-scrolly");a!=null&&(e.style.cssText="overflow: hidden;",e.scrollTop=+a,e.style.cssText="");}</script>
+<div id="observablehq-center">
+<aside id="observablehq-toc" data-selector="h1:not(:first-of-type)[id], h2:first-child[id], :not(h1) + h2[id]">
+<nav>
+<div>Contents</div>
+<ol>
+<li class="observablehq-secondary-link"><a href="#format">Format %</a></li>
+<li class="observablehq-secondary-link"><a href="#cursors">Cursors @</a></li>
+<li class="observablehq-secondary-link"><a href="#labels">Labels :</a></li>
+<li class="observablehq-secondary-link"><a href="#patterns">Patterns {}</a></li>
+<li class="observablehq-secondary-link"><a href="#functions">Functions ()</a></li>
+</ol>
+</nav>
+</aside>
+<main id="observablehq-main" class="observablehq">
+<div class="observablehq observablehq--block"><!--:7149d75c:--></div>
+<h1 id="wave-ql" tabindex="-1"><a class="observablehq-header-anchor" href="#wave-ql">WaveQL</a></h1>
+<p>waveform query language</p>
+<h2 id="format" tabindex="-1"><a class="observablehq-header-anchor" href="#format">Format <code>%</code></a></h2>
+<p>Text label of multibit values can be formated using one of <em>format specifiers</em>.</p>
+<p>A <em>format specifier</em> has following structure:</p>
+<pre><code>%specifier[element width]
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>specifier</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>b, o, d, h</td>
+<td>Unsigned ( binary, octal, decimal,hexadecimal ) integer</td>
+</tr>
+<tr>
+<td>sb, so, sd, sh</td>
+<td>Signed ( binary, octal, decimal, hexadecimal ) integer</td>
+</tr>
+<tr>
+<td>f, e, g, a</td>
+<td>Floating point number in ( Fixed point, Exponent, General, Hexadecimal ) notation</td>
+</tr>
+<tr>
+<td>c</td>
+<td>Character format</td>
+</tr>
+</tbody>
+</table>
+<h3 id="element-width" tabindex="-1"><a class="observablehq-header-anchor" href="#element-width">element width</a></h3>
+<p>Optional element with.
+If not specified then total wire width is used.
+If total wire width is longer then element width,
+the label will represented as vector of labels.</p>
+<h3 id="examples" tabindex="-1"><a class="observablehq-header-anchor" href="#examples">Examples</a></h3>
+<p>The label may be shortened to fit the space available in waveform.
+Some examples of labels shown in the table below.</p>
+<div class="observablehq observablehq--block"><!--:68039c2e:--></div>
+<div class="card" style="padding: 10px 0px;">
+<observablehq-loading></observablehq-loading><!--:03ad33d7:-->
+<observablehq-loading></observablehq-loading><!--:230cb4ce:-->
+</div>
+<h3 id="links" tabindex="-1"><a class="observablehq-header-anchor" href="#links">Links</a></h3>
+<ul>
+<li><a href="https://www.netlib.org/fp/" target="_blank" rel="noopener noreferrer">https://www.netlib.org/fp/</a></li>
+<li><a href="https://stackoverflow.com/questions/21882862/purpose-of-hexadecimal-floating-point-value" target="_blank" rel="noopener noreferrer">https://stackoverflow.com/questions/21882862/purpose-of-hexadecimal-floating-point-value</a></li>
+</ul>
+<h2 id="cursors" tabindex="-1"><a class="observablehq-header-anchor" href="#cursors">Cursors <code>@</code></a></h2>
+<p>cursors</p>
+<h2 id="labels" tabindex="-1"><a class="observablehq-header-anchor" href="#labels">Labels <code>:</code></a></h2>
+<h2 id="patterns" tabindex="-1"><a class="observablehq-header-anchor" href="#patterns">Patterns <code>{}</code></a></h2>
+<h2 id="functions" tabindex="-1"><a class="observablehq-header-anchor" href="#functions">Functions <code>()</code></a></h2>
+</main>
+<footer id="observablehq-footer">
+<nav><a rel="prev" href="./getting-started"><span>Getting started</span></a><a rel="next" href="./online"><span>Online</span></a></nav>
+<div>Built with <a href="https://observablehq.com/" target="_blank" rel="noopener noreferrer">Observable</a> on <a title="2025-10-15T19:45:06">Oct 15, 2025</a>.</div>
+</footer>
+</div>
+</body>
+</html>

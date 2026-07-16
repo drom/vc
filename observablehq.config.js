@@ -15,6 +15,6 @@ export default {
   ],
   // header: `<div>VCDrom ?</div>`,
   root: 'src', // path to the source root
-  output: 'docs/documentation', // path to the output root for build
+  output: 'docs/docs', // path to the output root for build
   search: true
 };

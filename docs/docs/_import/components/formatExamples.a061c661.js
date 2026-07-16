@@ -1,4 +1,4 @@
-import format from "./format.js?sha=f4335d54b5b7de2ea0cbb935d5e16e1d1185e6a40b28339bc0c3951bdad7fe38";
+import format from "./format.5b551975.js";
 
 const fp64_2bigint = (val) => {
   const buf = new ArrayBuffer(8);
